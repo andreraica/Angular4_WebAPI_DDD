@@ -1,9 +1,155 @@
 {
+	"id": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
 	"name": "UserRegister",
 	"description": "",
-	"id": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
-	"order": [],
+	"order": [
+		"37b60095-d55c-1d94-b0e9-74336c64c704",
+		"3d9240e8-e873-8ff8-519b-fb7648898796",
+		"b344cfa7-37ea-ab1f-cdaf-b780ac8777b8",
+		"142ace8a-285e-06cb-6da0-4a0f3c5b5845",
+		"433e9341-ebed-ae34-8822-1ba106d3ed7f"
+	],
+	"folders": [],
+	"folders_order": [],
 	"timestamp": 1514644832486,
 	"owner": 0,
-	"requests": []
+	"public": false,
+	"requests": [
+		{
+			"id": "142ace8a-285e-06cb-6da0-4a0f3c5b5845",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1514671308968,
+			"name": "Users_Add Edit",
+			"description": "",
+			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"responses": [],
+			"rawModeData": "{\r\n  \"Id\": \"5e0a3c54-4062-41c4-88bc-bc35e268a500\",\r\n  \"Name\": \"André Updated\"\r\n}"
+		},
+		{
+			"id": "37b60095-d55c-1d94-b0e9-74336c64c704",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:63324/api/Users",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"data": null,
+			"dataMode": "params",
+			"name": "Users_GetAll",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1514651581465,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "3d9240e8-e873-8ff8-519b-fb7648898796",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Users_Add",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1514652444863,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n  \"Name\": \"sample string 1\",\r\n  \"Id\": \"sample string 2\"\r\n}"
+		},
+		{
+			"id": "433e9341-ebed-ae34-8822-1ba106d3ed7f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users/5e0a3c54-4062-41c4-88bc-bc35e268a500",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1514672109037,
+			"name": "Users_Add Delete",
+			"description": "",
+			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "b344cfa7-37ea-ab1f-cdaf-b780ac8777b8",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:63324/api/Users/55025c4e-66bc-43cf-869b-cb7abc426a32",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1514671662942,
+			"name": "Users_GetById",
+			"description": "",
+			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"responses": []
+		}
+	]
 }

@@ -8,7 +8,7 @@ namespace AndreRaicaRegister.Application.Interfaces.Common
         IEnumerable<T> GetAll();
         T FindById(string id);
         T Add(T entity);
-        T Delete(T entity);
+        void Delete(string id);
         void Edit(T entity);
         //void Save();
     }

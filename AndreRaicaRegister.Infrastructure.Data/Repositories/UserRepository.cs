@@ -25,20 +25,23 @@ namespace AndreRaicaRegister.Infrastructure.Data.Repositories
             return entity;
         }
 
-        public User Delete(User entity)
+        public void Delete(string id)
         {
-            _userData.RemoveAt(_userData.FindIndex(x => x.Id == entity.Id));
-            return entity;
+            var searchIndex = _userData.FindIndex(x => x.Id == id);
+            if (searchIndex > -1)
+                _userData.RemoveAt(searchIndex);
         }
         public void Edit(User entity)
         {
-            _userData[_userData.FindIndex(x => x.Id == entity.Id)] = entity;
-            var user = entity;
+            var searchIndex = _userData.FindIndex(x => x.Id == entity.Id);
+            if(searchIndex > -1)
+                _userData[searchIndex] = entity;
         }
 
         public User FindById(string id)
         {
-            return _userData[_userData.FindIndex(x => x.Id == id)];
+            var searchIndex = _userData.FindIndex(x => x.Id == id);
+            return searchIndex > -1 ? _userData[searchIndex] : null;
         }
 
         public IEnumerable<User> GetAll()

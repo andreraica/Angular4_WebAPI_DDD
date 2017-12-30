@@ -27,9 +27,9 @@ namespace AndreRaicaRegister.Services.WebAPI.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]User entity)
+        public string Post([FromBody]User entity)
         {
-            _userManager.Add(entity);
+            return _userManager.Add(entity).Id;
         }
 
         [HttpPut]
@@ -39,9 +39,9 @@ namespace AndreRaicaRegister.Services.WebAPI.Controllers
         }
 
         [HttpDelete]
-        public void Delete([FromBody]User entity)
+        public void Delete(string id)
         {
-            _userManager.Delete(entity);
+            _userManager.Delete(id);
         }
     }
 }

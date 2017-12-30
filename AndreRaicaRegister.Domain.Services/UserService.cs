@@ -19,9 +19,9 @@ namespace AndreRaicaRegister.Domain.Services
             return _userRepository.Add(entity);
         }
 
-        public User Delete(User entity)
+        public void Delete(string id)
         {
-            return _userRepository.Delete(entity);
+            _userRepository.Delete(id);
         }
 
         public void Edit(User entity)

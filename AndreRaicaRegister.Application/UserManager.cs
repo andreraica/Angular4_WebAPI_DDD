@@ -19,9 +19,9 @@ namespace AndreRaicaRegister.Application
             return _userService.Add(entity);
         }
 
-        public User Delete(User entity)
+        public void Delete(string id)
         {
-            return _userService.Delete(entity);
+            _userService.Delete(id);
         }
 
         public void Edit(User entity)

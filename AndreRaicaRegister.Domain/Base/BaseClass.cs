@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AndreRaicaRegister.Domain.Base
 {
@@ -10,9 +6,14 @@ namespace AndreRaicaRegister.Domain.Base
     {
         public BaseClass(string Id)
         {
-            Id = string.IsNullOrEmpty(Id) ? Guid.NewGuid().ToString() : Id;
+            _id = string.IsNullOrEmpty(Id) ? Guid.NewGuid().ToString() : Id;
         }
 
-        public string Id { get; set; }
+        private string _id;
+        public string Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
     }
 }
