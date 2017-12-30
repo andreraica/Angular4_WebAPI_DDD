@@ -29,7 +29,7 @@ namespace AndreRaicaRegister.Application
             _userService.Edit(entity);
         }
 
-        public User FindById(int id)
+        public User FindById(string id)
         {
             return _userService.FindById(id);
         }

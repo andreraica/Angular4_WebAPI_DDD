@@ -5,7 +5,11 @@ namespace AndreRaicaRegister.Domain.Entities
 {
     public class User : BaseClass, IUser
     {
-        public User() : base()
+        public User() : base(null)
+        {
+        }
+
+        public User(string id) : base(id)
         {
         }
 

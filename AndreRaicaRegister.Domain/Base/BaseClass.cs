@@ -8,9 +8,9 @@ namespace AndreRaicaRegister.Domain.Base
 {
     public class BaseClass
     {
-        public BaseClass()
+        public BaseClass(string Id)
         {
-            Id = Guid.NewGuid().ToString();
+            Id = string.IsNullOrEmpty(Id) ? Guid.NewGuid().ToString() : Id;
         }
 
         public string Id { get; set; }

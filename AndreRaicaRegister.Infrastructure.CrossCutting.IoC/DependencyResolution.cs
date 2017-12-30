@@ -2,6 +2,8 @@
 using AndreRaicaRegister.Application.Interfaces;
 using AndreRaicaRegister.Domain.Services;
 using AndreRaicaRegister.Domain.Services.Interfaces;
+using AndreRaicaRegister.Infrastructure.Data.Interface;
+using AndreRaicaRegister.Infrastructure.Data.Repositories;
 using SimpleInjector;
 
 namespace AndreRaicaRegister.Infrastructure.CrossCutting.IoC
@@ -31,7 +33,7 @@ namespace AndreRaicaRegister.Infrastructure.CrossCutting.IoC
 
         static void RegisterRepositories(ScopedLifestyle requestLifestyle)
         {
-            //Não precisa registrar, MOCK
+            _container.Register<IUserRepository, UserRepository>(requestLifestyle);
         }
 
     }
