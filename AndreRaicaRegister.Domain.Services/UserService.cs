@@ -1,0 +1,42 @@
+﻿using AndreRaicaRegister.Domain.Entities;
+using AndreRaicaRegister.Domain.Services.Interfaces;
+using AndreRaicaRegister.Infrastructure.Data.Interface;
+using System.Collections.Generic;
+
+namespace AndreRaicaRegister.Domain.Services
+{
+    public class UserService : IUserService
+    {
+        private readonly IUserRepository _userRepository;
+
+        public UserService(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
+
+        public User Add(User entity)
+        {
+            return _userRepository.Add(entity);
+        }
+
+        public User Delete(User entity)
+        {
+            return _userRepository.Delete(entity);
+        }
+
+        public void Edit(User entity)
+        {
+            _userRepository.Edit(entity);
+        }
+
+        public User FindById(int id)
+        {
+            return _userRepository.FindById(id);
+        }
+
+        public IEnumerable<User> GetAll()
+        {
+            return _userRepository.GetAll();
+        }
+    }
+}

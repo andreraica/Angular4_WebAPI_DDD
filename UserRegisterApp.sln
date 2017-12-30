@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{8352BFA4-4DE7-4D11-B363-67D4C5556A29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{E018D0A8-CC8A-47B7-BF67-A781B6640C34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{F8BDD1C4-4B8B-4A82-BFBB-995F64DC7648}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{388E5152-B4BE-4BCE-A65F-C9382CD26206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{0D589C13-C408-4CEC-A643-CDAD24470864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreRaicaRegister.Application", "AndreRaicaRegister.Application\AndreRaicaRegister.Application.csproj", "{F810751C-BF45-4F82-AE10-7DC29FF1857C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreRaicaRegister.Domain", "AndreRaicaRegister.Domain\AndreRaicaRegister.Domain.csproj", "{822CAB86-691E-4B60-A955-CB8B3BEE3C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreRaicaRegister.Domain.Services", "AndreRaicaRegister.Domain.Services\AndreRaicaRegister.Domain.Services.csproj", "{7815CDC9-497A-4BB9-90A6-2CDFD0AC76BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - CrossCutting", "4.1 - CrossCutting", "{C07E28CA-487E-428B-BBB1-343B4A200E57}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AndreRaicaRegister.Presentation.Angular4", "AndreRaicaRegister.Presentation.Angular4\", "{F461CD6A-B3A7-4A5D-92BD-26847488B82E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63304"
+		Debug.AspNetCompiler.PhysicalPath = "AndreRaicaRegister.Presentation.Angular4\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63304\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63304"
+		Release.AspNetCompiler.PhysicalPath = "AndreRaicaRegister.Presentation.Angular4\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63304\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63304"
+		SlnRelativePath = "AndreRaicaRegister.Presentation.Angular4\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreRaicaRegister.Infrastructure.CrossCutting.IoC", "AndreRaicaRegister.Infrastructure.CrossCutting.IoC\AndreRaicaRegister.Infrastructure.CrossCutting.IoC.csproj", "{EB3A31DB-5515-4ECC-AC34-38B8378D2C95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreRaicaRegister.Infrastructure.Data", "AndreRaicaRegister.Infrastructure.Data\AndreRaicaRegister.Infrastructure.Data.csproj", "{C96F161A-23D7-4E3E-9D14-1D9C2CE41EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreRaicaRegister.Services.WebAPI", "AndreRaicaRegister.Services.WebAPI\AndreRaicaRegister.Services.WebAPI.csproj", "{62F1480F-78D1-4B57-BAC0-64111057C29B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F810751C-BF45-4F82-AE10-7DC29FF1857C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F810751C-BF45-4F82-AE10-7DC29FF1857C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F810751C-BF45-4F82-AE10-7DC29FF1857C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F810751C-BF45-4F82-AE10-7DC29FF1857C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822CAB86-691E-4B60-A955-CB8B3BEE3C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822CAB86-691E-4B60-A955-CB8B3BEE3C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822CAB86-691E-4B60-A955-CB8B3BEE3C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822CAB86-691E-4B60-A955-CB8B3BEE3C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7815CDC9-497A-4BB9-90A6-2CDFD0AC76BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7815CDC9-497A-4BB9-90A6-2CDFD0AC76BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7815CDC9-497A-4BB9-90A6-2CDFD0AC76BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7815CDC9-497A-4BB9-90A6-2CDFD0AC76BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F461CD6A-B3A7-4A5D-92BD-26847488B82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F461CD6A-B3A7-4A5D-92BD-26847488B82E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F461CD6A-B3A7-4A5D-92BD-26847488B82E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{EB3A31DB-5515-4ECC-AC34-38B8378D2C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3A31DB-5515-4ECC-AC34-38B8378D2C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3A31DB-5515-4ECC-AC34-38B8378D2C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3A31DB-5515-4ECC-AC34-38B8378D2C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96F161A-23D7-4E3E-9D14-1D9C2CE41EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96F161A-23D7-4E3E-9D14-1D9C2CE41EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96F161A-23D7-4E3E-9D14-1D9C2CE41EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96F161A-23D7-4E3E-9D14-1D9C2CE41EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F1480F-78D1-4B57-BAC0-64111057C29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F1480F-78D1-4B57-BAC0-64111057C29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F1480F-78D1-4B57-BAC0-64111057C29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F1480F-78D1-4B57-BAC0-64111057C29B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F810751C-BF45-4F82-AE10-7DC29FF1857C} = {F8BDD1C4-4B8B-4A82-BFBB-995F64DC7648}
+		{822CAB86-691E-4B60-A955-CB8B3BEE3C46} = {388E5152-B4BE-4BCE-A65F-C9382CD26206}
+		{7815CDC9-497A-4BB9-90A6-2CDFD0AC76BD} = {388E5152-B4BE-4BCE-A65F-C9382CD26206}
+		{C07E28CA-487E-428B-BBB1-343B4A200E57} = {0D589C13-C408-4CEC-A643-CDAD24470864}
+		{F461CD6A-B3A7-4A5D-92BD-26847488B82E} = {8352BFA4-4DE7-4D11-B363-67D4C5556A29}
+		{EB3A31DB-5515-4ECC-AC34-38B8378D2C95} = {C07E28CA-487E-428B-BBB1-343B4A200E57}
+		{C96F161A-23D7-4E3E-9D14-1D9C2CE41EC6} = {0D589C13-C408-4CEC-A643-CDAD24470864}
+		{62F1480F-78D1-4B57-BAC0-64111057C29B} = {E018D0A8-CC8A-47B7-BF67-A781B6640C34}
+	EndGlobalSection
+EndGlobal
