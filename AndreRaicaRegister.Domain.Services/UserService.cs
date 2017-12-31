@@ -1,6 +1,7 @@
 ﻿using AndreRaicaRegister.Domain.Entities;
 using AndreRaicaRegister.Domain.Services.Interfaces;
 using AndreRaicaRegister.Infrastructure.Data.Interface;
+using System;
 using System.Collections.Generic;
 
 namespace AndreRaicaRegister.Domain.Services
@@ -16,6 +17,9 @@ namespace AndreRaicaRegister.Domain.Services
 
         public User Add(User entity)
         {
+            if (this.FindById(entity.Id) != null)
+                throw new ApplicationException("User already Exists");
+
             return _userRepository.Add(entity);
         }
 

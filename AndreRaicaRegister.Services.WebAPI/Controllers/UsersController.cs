@@ -1,6 +1,11 @@
 ﻿using AndreRaicaRegister.Application.Interfaces;
 using AndreRaicaRegister.Domain.Entities;
+using AndreRaicaRegister.Services.WebAPI.Models;
+using AutoMapper;
+using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace AndreRaicaRegister.Services.WebAPI.Controllers
@@ -8,40 +13,102 @@ namespace AndreRaicaRegister.Services.WebAPI.Controllers
     public class UsersController : ApiController
     {
         private readonly IUserManager _userManager;
+        private readonly IMapper _mapper;
 
         public UsersController(IUserManager userManager)
         {
             _userManager = userManager;
+            _mapper = AutoMapperConfig.Mapper;
         }
         
         [HttpGet]
-        public IEnumerable<User> Get()
+        public HttpResponseMessage Get()
         {
-            return _userManager.GetAll();
+            try
+            {
+                var users = _mapper.Map<IEnumerable<UserViewModel>>(_userManager.GetAll());
+                return (users != null) ? Request.CreateResponse(HttpStatusCode.OK, users) : Request.CreateResponse(HttpStatusCode.NoContent);
+            }
+            catch (ApplicationException appEx)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, appEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
         }
 
         [HttpGet]
-        public User Get(string id)
+        public HttpResponseMessage Get(string id)
         {
-            return _userManager.FindById(id);
+            try
+            {
+                var user = _mapper.Map<UserViewModel>(_userManager.FindById(id));
+                return (user != null) ? Request.CreateResponse(HttpStatusCode.OK, user) : Request.CreateResponse(HttpStatusCode.NoContent);
+            }
+            catch (ApplicationException appEx)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, appEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
         }
 
         [HttpPost]
-        public string Post([FromBody]User entity)
+        public HttpResponseMessage Post([FromBody]User entity)
         {
-            return _userManager.Add(entity).Id;
+            try
+            {
+                var user = _mapper.Map<UserViewModel>(_userManager.Add(entity));
+                return Request.CreateResponse(HttpStatusCode.OK, user);
+            }
+            catch (ApplicationException appEx)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, appEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
         }
 
         [HttpPut]
-        public void Put([FromBody]User entity)
+        public HttpResponseMessage Put([FromBody]User entity)
         {
-            _userManager.Edit(entity);
+            try
+            {
+                _userManager.Edit(entity);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (ApplicationException appEx)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, appEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
         }
 
         [HttpDelete]
-        public void Delete(string id)
+        public HttpResponseMessage Delete(string id)
         {
-            _userManager.Delete(id);
+            try
+            {
+                _userManager.Delete(id);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (ApplicationException appEx)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, appEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
         }
     }
 }
