@@ -1,5 +1,5 @@
 <p>
   USER-COMPONENTS
 </p>
-<app-user-form></app-user-form>
-<app-user-list [users]="users" ></app-user-list>
+<app-user-form (createNewUserEvent)="createUser($event)"></app-user-form>
+<app-user-list [users]="users" ></app-user-list> <!--(getUsersEvent)="getUsers($event)"-->

@@ -1,6 +1,5 @@
-<p>
-  app-user-form works!
-</p>
-<p>
-  Name: <input type="text" />
-</p>
+<h1>app-user-form !!!</h1>
+<form (submit)="create()">
+    Name: <input type="text" name="name" [(ngModel)]="userForm.name">
+    <input type="submit">
+</form>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-form',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor() { }
+  @Output() createNewUserEvent = new EventEmitter();
+
+  userForm = new User();
+
+  constructor(private _userService : UserService) { }
 
   ngOnInit() {
+  }
+
+  create(){
+    this._userService.create(this.userForm);
+    this.createNewUserEvent.emit(this.userForm);
+    this.userForm = new User();
   }
 
 }

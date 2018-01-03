@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './user';
 import { UserService } from './user.service';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-user',
@@ -18,6 +17,10 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
+  }
+
+  createUser(user: User){
+    this.users.push(user);
   }
 
   getUsers(){
