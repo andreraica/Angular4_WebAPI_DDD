@@ -12,6 +12,7 @@ export class UserFormComponent implements OnInit {
 
   @Output() createNewUserEvent = new EventEmitter();
 
+  public cpfMask = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
   public modalRef: BsModalRef;
   userForm = new User();
 

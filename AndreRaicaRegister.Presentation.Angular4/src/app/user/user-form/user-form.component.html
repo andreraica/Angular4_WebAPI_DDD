@@ -1,7 +1,10 @@
 <h1>app-user-form !!!</h1>
 <form (submit)="create()">
     Name: <input type="text" name="name" [(ngModel)]="userForm.name">
-    Document: <input type="text" name="document" [(ngModel)]="userForm.document">
+    Document: <input type="text" name="document" 
+    [textMask]="{mask: cpfMask}"
+    [(ngModel)]="userForm.document">
+    
     <input type="submit" class="btn btn-success" value="Send">
 </form>
 
@@ -19,3 +22,6 @@
         This is a modal content.
     </div>
 </ng-template>
+
+
+<input [textMask]="{mask: cpfMask}" type="text"/>
