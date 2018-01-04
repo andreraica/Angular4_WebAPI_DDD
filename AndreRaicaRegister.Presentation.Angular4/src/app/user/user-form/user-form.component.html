@@ -1,5 +1,21 @@
 <h1>app-user-form !!!</h1>
 <form (submit)="create()">
     Name: <input type="text" name="name" [(ngModel)]="userForm.name">
-    <input type="submit">
+    Document: <input type="text" name="document" [(ngModel)]="userForm.document">
+    <input type="submit" class="btn btn-success" value="Send">
 </form>
+
+<button type="button" class="btn btn-info" (click)="openModal(template)">Open template modal</button>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" 
+                aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        This is a modal content.
+    </div>
+</ng-template>
