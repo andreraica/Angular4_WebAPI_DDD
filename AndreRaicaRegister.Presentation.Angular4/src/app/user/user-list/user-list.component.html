@@ -1,6 +1,29 @@
-<p>
-  user-list works!
-</p>
+<h1>app-list !!!</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Id
+      </th>
+      <th>
+        Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>
+        {{ user.Id }} 
+      </td>
+      <td>
+        {{ user.Name }} 
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Source</h3>
 <p>
   {{ users | json }}
 </p>
