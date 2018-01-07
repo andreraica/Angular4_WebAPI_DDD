@@ -11,9 +11,8 @@ import { UserComponent } from './user/user.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 
-import * as globalVariables from './global';
-
 import { UserService } from './user/user.service';
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,10 @@ import { UserService } from './user/user.service';
     AppBootstrapModule,
     TextMaskModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService, 
+    Globals
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,25 +4,33 @@ import { User } from './user';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
-
+import { Globals } from '../globals';
 
 @Injectable()
 export class UserService {
 
-  constructor(private _http: Http) { }
+  constructor(
+    private _http: Http,
+    private globals: Globals
+  ) { }
 
   create(user: User){
-    return this._http.post("http://localhost:63324/api/Users", user)
+    return this._http.post(this.globals.urlAPI + "/Users", user)
     .map(data => data.json())
-    .catch(err => Observable.throw(err.json().error || 'Server error / unavaliable'))
+    .catch(this.handleErrorPromise)
     .toPromise();
   }
 
-  getUsers(){
-    return this._http.get("http://localhost:63324/api/Users")
+  getUsers(): Promise<User[]> {
+    return this._http.get(this.globals.urlAPI + "/Users")
     .map(data => data.json())
-    .catch(err => Observable.throw(err.json().error || 'Server error / unavaliable'))
+    .catch(this.handleErrorPromise)
     .toPromise();
   }
+  
+  private handleErrorPromise (error: Response | any) {
+    console.error(error.message || error);
+    return Promise.reject(error.message || error);
+  }	
 
 }
