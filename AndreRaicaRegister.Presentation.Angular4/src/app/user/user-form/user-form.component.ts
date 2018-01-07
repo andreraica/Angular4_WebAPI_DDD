@@ -11,25 +11,23 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class UserFormComponent implements OnInit {
 
   @Output() createNewUserEvent = new EventEmitter();
+  @Output() exceptionUserEvent = new EventEmitter();
 
   public cpfMask = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]
-  public modalRef: BsModalRef;
   userForm = new User();
 
-  constructor(
-    private _userService : UserService,
-    private modalService: BsModalService) { }
-
+  constructor(private _userService : UserService){}
+    
   ngOnInit() {
-  }
-  
-  public openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template); // {3}
   }
 
   create(){
     this._userService.create(this.userForm).then((res) => {
       this.createNewUserEvent.emit(res);
+      this.userForm = new User();
+    }).catch((ex) => {
+      //MOCK Applied Service unavaliable
+      this.exceptionUserEvent.emit(ex)
       this.userForm = new User();
     });
   }

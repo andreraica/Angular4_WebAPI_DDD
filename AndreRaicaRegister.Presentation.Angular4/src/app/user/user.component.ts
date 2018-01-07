@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './user';
 import { UserService } from './user.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-user',
@@ -11,9 +12,11 @@ export class UserComponent implements OnInit {
 
   users: Array<User> = [];
 
-  constructor(private _userService : UserService) { 
+  constructor(
+    private _userService : UserService,
+    private modalService: BsModalService) { 
 
-  }
+    }
 
   ngOnInit() {
     this.getUsers();
@@ -26,6 +29,11 @@ export class UserComponent implements OnInit {
   getUsers(){
     this._userService.getUsers()
     .then(users => this.users = users);
+  }
+
+  exceptionUser(ex){
+    //this.modalService.show(ex); // {3}
+    alert(ex);
   }
 
 }
