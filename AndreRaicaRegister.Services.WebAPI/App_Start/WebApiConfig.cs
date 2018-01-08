@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.Owin.Security.OAuth;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -18,8 +16,12 @@ namespace AndreRaicaRegister.Services.WebAPI
             var corsAttr = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(corsAttr);
 
-            // Web API routes
-            config.MapHttpAttributeRoutes();
+            #region "Token"
+
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
+            #endregion
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
