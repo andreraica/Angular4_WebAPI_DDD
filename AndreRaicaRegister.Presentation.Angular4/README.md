@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/#2-installing-bootstrap-from-npm
 https://www.npmjs.com/package/angular2-text-mask
-
+https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
