@@ -80,7 +80,7 @@ namespace AndreRaicaRegister.Services.WebAPI
         {
             //var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ///ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             //if (user == null)
             //{
@@ -88,18 +88,18 @@ namespace AndreRaicaRegister.Services.WebAPI
             //    return;
             //}
 
-            //ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager);
-            //ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager);
+            ClaimsIdentity oAuthIdentity = new ClaimsIdentity("UserAuthType", "NameType", "RoleType"); //await user.GenerateUserIdentityAsync(userManager);
+            ClaimsIdentity cookiesIdentity = new ClaimsIdentity("UserAuthType", "NameType", "RoleType"); //await user.GenerateUserIdentityAsync(userManager);
 
-            //var properties = new AuthenticationProperties(new Dictionary<string, string>
-            //    {
-            //        { "as:client_id", context.ClientId }
-            //    });
+            var properties = new AuthenticationProperties(new Dictionary<string, string>
+                {
+                    { "as:client_id", context.ClientId }
+                });
 
-            //AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
+            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
 
-            //context.Validated(ticket);
-            //context.Request.Context.Authentication.SignIn(cookiesIdentity);
+            context.Validated(ticket);
+            context.Request.Context.Authentication.SignIn(cookiesIdentity);
 
             //EXTREMAMENTE NECESSÁRIO, pois quando se trata do middleware do OWIN, o CORS não atende
             if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
