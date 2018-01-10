@@ -2,7 +2,7 @@
 <form (submit)="create()">
     Name: <input type="text" name="name" [(ngModel)]="userForm.name">
     Document: <input type="text" name="document" 
-    [textMask]="{mask: cpfMask}"
+    [textMask]="{mask: this.globals.cpfMask}"
     [(ngModel)]="userForm.document">
 
     <input type="submit" class="btn btn-success" value="Send">

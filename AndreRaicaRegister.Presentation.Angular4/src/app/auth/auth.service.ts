@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthService {
   public getToken(): string {
-    return '123456'; //localStorage.getItem('access_token');
+    return '123456ABC'; //localStorage.getItem('access_token');
   }
   public isAuthenticated(): boolean {
     // get the token
