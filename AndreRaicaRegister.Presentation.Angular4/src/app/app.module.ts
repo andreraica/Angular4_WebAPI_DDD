@@ -4,6 +4,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -15,21 +16,35 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { UserService } from './user/user.service';
 import { Globals } from './globals';
 import { AuthService } from './auth/auth.service';
+import { LoginFormComponent } from './login-form/login-form.component';
 
+const appRoutes:Routes = [
+  {
+    path: '',
+    component: LoginFormComponent
+  },
+  {
+    path: 'user',
+    component: UserComponent
+  }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     UserFormComponent,
-    UserListComponent
+    UserListComponent,
+    LoginFormComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     AppBootstrapModule,
     TextMaskModule,
     HttpClientModule
+    
   ],
   providers: [
     {
