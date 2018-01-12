@@ -3,6 +3,7 @@
 	"name": "UserRegister",
 	"description": "",
 	"order": [
+		"a4c014e7-8459-02e1-f4f6-97cc8f0bb7fb",
 		"3d9240e8-e873-8ff8-519b-fb7648898796",
 		"37b60095-d55c-1d94-b0e9-74336c64c704",
 		"b344cfa7-37ea-ab1f-cdaf-b780ac8777b8",
@@ -88,12 +89,12 @@
 			"tests": "var data = JSON.parse(responseBody);\npostman.setGlobalVariable(\"AndreRaica.UserRegister.UserId\", data.Id);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1514680934817,
+			"time": 1515720785961,
 			"name": "Users_Add",
 			"description": "",
 			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
 			"responses": [],
-			"rawModeData": "{\r\n  \"Name\": \"André 123\"\r\n}"
+			"rawModeData": "{\r\n  \"Name\": \"André4 41234\"\r\n}"
 		},
 		{
 			"id": "433e9341-ebed-ae34-8822-1ba106d3ed7f",
@@ -124,6 +125,70 @@
 			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
 			"responses": [],
 			"rawModeData": ""
+		},
+		{
+			"id": "a4c014e7-8459-02e1-f4f6-97cc8f0bb7fb",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:63324/Token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "teste@teste.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "client",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "secret",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Origin",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "var data = JSON.parse(responseBody);\npostman.setGlobalVariable(\"AndreRaica.UserRegister.UserId\", data.Id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1515719132690,
+			"name": "Token",
+			"description": "",
+			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"responses": []
 		},
 		{
 			"id": "b344cfa7-37ea-ab1f-cdaf-b780ac8777b8",
