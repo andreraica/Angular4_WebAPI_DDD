@@ -3,6 +3,7 @@
     (exceptionUserEvent)="exceptionUser($event)">
 </app-user-form>
 <app-user-list [users]="users"></app-user-list> <!--(getUsersEvent)="getUsers($event)"-->
+<a routerLink="/">Login</a>
 
 
 <ng-template #template>
@@ -16,5 +17,4 @@
     <div class="modal-body">
         This is a modal content.
     </div>
-    <a routerLink="/">Login</a>
 </ng-template>
