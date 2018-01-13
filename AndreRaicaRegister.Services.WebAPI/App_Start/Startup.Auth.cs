@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Web.Http;
 using Microsoft.Owin.Security.Infrastructure;
 using System.Collections.Concurrent;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 
 //https://help.salesforce.com/apex/HTViewHelpDoc?id=remoteaccess_oauth_refresh_token_flow.htm&language=en
@@ -29,7 +31,6 @@ namespace AndreRaicaRegister.Services.WebAPI
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-
             // Configure the db context and user manager to use a single instance per request
             //app.CreatePerOwinContext(ApplicationDbContext.Create);
             //app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -40,6 +41,7 @@ namespace AndreRaicaRegister.Services.WebAPI
             //app.UseCookieAuthentication(new CookieAuthenticationOptions());
             //app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             // Configure the application for OAuth based flow
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
@@ -50,7 +52,7 @@ namespace AndreRaicaRegister.Services.WebAPI
                 AllowInsecureHttp = true
                 //RefreshTokenProvider = new SimpleRefreshTokenProvider()
             };
-
+            
             app.UseOAuthAuthorizationServer(OAuthOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 

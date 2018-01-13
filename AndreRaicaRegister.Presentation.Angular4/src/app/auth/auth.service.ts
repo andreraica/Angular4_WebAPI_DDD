@@ -23,12 +23,12 @@ export class AuthService {
 
   public authenticate(user: string, pass: string) {
     
-    let authUser = new URLSearchParams();
-    authUser.set('grant_type', 'password');
-    authUser.set('username', user);
-    authUser.set('password', pass);
-    authUser.set('client_id', 'client');
-    authUser.set('client_secret', 'secret');
+    // let authUser = new URLSearchParams();
+    // authUser.set('grant_type', 'password');
+    // authUser.set('username', user);
+    // authUser.set('password', pass);
+    // authUser.set('client_id', 'client');
+    // authUser.set('client_secret', 'secret');
     
     // let authUser = new HttpParams()
     // .set('grant_type', 'password')
@@ -37,12 +37,12 @@ export class AuthService {
     // .set('client_id', 'client')
     // .set('client_secret', 'secret');
 
-    // let authUser = new AuthUser();
-    // authUser.grant_type = 'password';
-    // authUser.username = user;
-    // authUser.password = pass;
-    // authUser.client_id = 'client';
-    // authUser.client_secret = 'secret';
+    let authUser = new AuthUser();
+    authUser.grant_type = 'password';
+    authUser.username = user;
+    authUser.password = pass;
+    authUser.client_id = 'client';
+    authUser.client_secret = 'secret';
 
     // let grant_type = 'password';
     // let username = user;
