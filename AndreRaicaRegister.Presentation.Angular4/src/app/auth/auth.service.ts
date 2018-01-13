@@ -37,12 +37,12 @@ export class AuthService {
     // .set('client_id', 'client')
     // .set('client_secret', 'secret');
 
-    let authUser = new AuthUser();
-    authUser.grant_type = 'password';
-    authUser.username = user;
-    authUser.password = pass;
-    authUser.client_id = 'client';
-    authUser.client_secret = 'secret';
+    // let authUser = new AuthUser();
+    // authUser.grant_type = 'password';
+    // authUser.username = user;
+    // authUser.password = pass;
+    // authUser.client_id = 'client';
+    // authUser.client_secret = 'secret';
 
     // let grant_type = 'password';
     // let username = user;
@@ -51,10 +51,22 @@ export class AuthService {
     // let client_secret = 'secret';
     // let authUser = "grant_type=password&username=" + username + "&password=" + password + "&client_id=" + client_id + "&client_secret=" + client_secret + "&crossDomain=true";
 
+    // let authUser = new FormData();
+    // authUser.append('grant_type', 'password');
+    // authUser.append('username', user);
+    // authUser.append('password', pass);
+    // authUser.append('client_id', 'client');
+    // authUser.append('client_secret', 'secret');
+    
+    let userName = 'teste@teste.com';
+    let password = '123456';
+    let clientId = 'client';
+    let secret = "secret";
+    let authData = "grant_type=password&username=" + userName + "&password=" + password + "&client_id=" + clientId + "&client_secret=" + secret + "&crossDomain=true";
 
     let header = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8;');
 
-    this._http.post<string>(this.globals.urlToken + "/Token", authUser, { headers: header })
+    this._http.post<string>(this.globals.urlToken + "/Token", authData, { headers: header })
     .subscribe((token:string) => {
       localStorage.setItem('access_token', token)
     });
