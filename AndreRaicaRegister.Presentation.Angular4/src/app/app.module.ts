@@ -17,6 +17,7 @@ import { UserService } from './user/user.service';
 import { Globals } from './globals';
 import { AuthService } from './auth/auth.service';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { JwtInterceptor } from './auth/jwt.interceptor';
 
 const appRoutes:Routes = [
   {

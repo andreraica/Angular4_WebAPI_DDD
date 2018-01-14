@@ -104,8 +104,8 @@ namespace AndreRaicaRegister.Services.WebAPI
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
 
             //EXTREMAMENTE NECESSÁRIO, pois quando se trata do middleware do OWIN, o CORS não atende
-            if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            //if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
+            //    context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             //Para segurança em produção
             //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "http://localhost:1099" });
@@ -188,8 +188,8 @@ namespace AndreRaicaRegister.Services.WebAPI
             context.Validated(newTicket);
 
             //EXTREMAMENTE NECESSÁRIO, pois quando se trata do middleware do OWIN, o CORS não atende
-            if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            //if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
+            //    context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
         }
     }
 
@@ -242,8 +242,8 @@ namespace AndreRaicaRegister.Services.WebAPI
                 context.SetTicket(ticket);
             }
 
-            if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            //if (!context.OwinContext.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
+            //    context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             //necessário senão reclamava de não ter retorno o método, não sei o que significa o codigo abaixo
             return Task.FromResult<object>(null);

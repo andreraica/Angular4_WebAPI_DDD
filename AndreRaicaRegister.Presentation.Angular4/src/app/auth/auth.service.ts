@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Globals } from '../globals';
 import { Observable } from 'rxjs/Observable';
 import { AuthUser } from './auth-user';
+import { Token } from './token';
 //import decode from 'jwt-decode';
 
 @Injectable()
@@ -21,7 +22,7 @@ export class AuthService {
     return true; //tokenNotExpired(null, token);
   }
 
-  public authenticate(user: string, pass: string) {
+  public authenticate(user: string, pass: string) : Observable<Token> {
     
     // let authUser = new URLSearchParams();
     // authUser.set('grant_type', 'password');
@@ -66,10 +67,9 @@ export class AuthService {
 
     let header = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8;');
 
-    this._http.post<string>(this.globals.urlToken + "/Token", authData, { headers: header })
-    .subscribe((token:string) => {
-      localStorage.setItem('access_token', token)
-    });
+    return this._http.post<Token>(this.globals.urlToken + "/Token", authData, { headers: header })
+    
+    //return Observable.of();
      
   }
 

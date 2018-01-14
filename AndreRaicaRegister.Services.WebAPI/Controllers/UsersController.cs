@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace AndreRaicaRegister.Services.WebAPI.Controllers
 {
+    [Authorize]
     public class UsersController : ApiController
     {
         private readonly IUserManager _userManager;

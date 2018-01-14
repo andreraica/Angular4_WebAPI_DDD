@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
+import { Token } from '../auth/token';
 
 @Component({
   selector: 'app-login-form',
@@ -21,9 +22,11 @@ export class LoginFormComponent implements OnInit {
     e.preventDefault();
     //e.target.element[0].value
 
-    this._authService.authenticate('admin','admin');
+    this._authService.authenticate('admin','admin')
+    .subscribe((token:Token) => {
+      localStorage.setItem('access_token', token.access_token)
+      this.router.navigate(['/user']);
+    })
 
-    this.router.navigate(['/user']);
   }
-
 }
