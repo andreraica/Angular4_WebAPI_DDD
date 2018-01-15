@@ -45,7 +45,6 @@ const appRoutes:Routes = [
     AppBootstrapModule,
     TextMaskModule,
     HttpClientModule
-    
   ],
   providers: [
     {
