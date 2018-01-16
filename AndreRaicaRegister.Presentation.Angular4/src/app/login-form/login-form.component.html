@@ -1,3 +1,6 @@
-<form (submit)="loginUser($event)">
+<form (submit)="loginUser()">
+  user: <input type="text" name="username" placeholder="admin" [(ngModel)]="authUser.username" /><br />
+  pass: <input type="text" name="password" placeholder="admin" [(ngModel)]="authUser.password" />
+
   <input type="submit" value="login">
 </form>

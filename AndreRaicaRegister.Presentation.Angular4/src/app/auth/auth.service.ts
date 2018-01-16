@@ -22,7 +22,7 @@ export class AuthService {
     return true; //tokenNotExpired(null, token);
   }
 
-  public authenticate(user: string, pass: string) : Observable<Token> {
+  public authenticate(authUser: AuthUser) : Observable<Token> {
     
     // let authUser = new URLSearchParams();
     // authUser.set('grant_type', 'password');
@@ -59,8 +59,8 @@ export class AuthService {
     // authUser.append('client_id', 'client');
     // authUser.append('client_secret', 'secret');
     
-    let userName = 'teste@teste.com';
-    let password = '123456';
+    let userName = authUser.username;
+    let password = authUser.password;
     let clientId = 'client';
     let secret = "secret";
     let authData = "grant_type=password&username=" + userName + "&password=" + password + "&client_id=" + clientId + "&client_secret=" + secret + "&crossDomain=true";
