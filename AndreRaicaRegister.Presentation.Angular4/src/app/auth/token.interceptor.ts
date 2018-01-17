@@ -31,8 +31,12 @@ export class TokenInterceptor implements HttpInterceptor {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
           alert('Usuário não logado.')
-          this.router.navigate(['/']);
         }
+        else{
+          alert('Ocorreu um erro inexperado. Verifique se o serviço API está sendo executado...');
+        }
+
+        this.router.navigate(['/']);
       }
     });
 
