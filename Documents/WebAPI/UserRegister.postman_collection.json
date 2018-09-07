@@ -1,108 +1,35 @@
 {
-	"id": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+	"id": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
 	"name": "UserRegister",
 	"description": "",
 	"order": [
-		"a4c014e7-8459-02e1-f4f6-97cc8f0bb7fb",
-		"3d9240e8-e873-8ff8-519b-fb7648898796",
-		"37b60095-d55c-1d94-b0e9-74336c64c704",
-		"b344cfa7-37ea-ab1f-cdaf-b780ac8777b8",
-		"142ace8a-285e-06cb-6da0-4a0f3c5b5845",
-		"433e9341-ebed-ae34-8822-1ba106d3ed7f"
+		"fc803606-3279-db9c-1600-3d26897140f1",
+		"993fccfa-d226-50d2-f636-bf89ccbffdf1",
+		"fdbb84b6-615a-4865-8a17-663d22d7dac9",
+		"91e92baf-fd20-0981-ba7a-1fc46c9417ee",
+		"a2f553e6-8c9e-af24-5c8e-a0362973f22a",
+		"5fc11ab4-20a9-609b-d46d-18966736fba4"
 	],
 	"folders": [],
 	"folders_order": [],
 	"timestamp": 1514644832486,
-	"owner": 0,
+	"owner": "578116",
 	"public": false,
+	"hasRequests": true,
 	"requests": [
 		{
-			"id": "142ace8a-285e-06cb-6da0-4a0f3c5b5845",
-			"headers": "Content-Type: application/json\n",
+			"id": "5fc11ab4-20a9-609b-d46d-18966736fba4",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{AndreRaica.UserRegister.Token}}\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/json",
 					"description": "",
 					"enabled": true
-				}
-			],
-			"url": "http://localhost:63324/api/Users",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1514681071694,
-			"name": "Users_Add Edit",
-			"description": "",
-			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
-			"responses": [],
-			"rawModeData": "{\r\n  \"Id\": \"{{AndreRaica.UserRegister.UserId}}\",\r\n  \"Name\": \"André Updated1112\"\r\n}"
-		},
-		{
-			"id": "37b60095-d55c-1d94-b0e9-74336c64c704",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:63324/api/Users",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1514680936784,
-			"name": "Users_GetAll",
-			"description": "",
-			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
-			"responses": []
-		},
-		{
-			"id": "3d9240e8-e873-8ff8-519b-fb7648898796",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
+				},
 				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:63324/api/Users",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"tests": "var data = JSON.parse(responseBody);\npostman.setGlobalVariable(\"AndreRaica.UserRegister.UserId\", data.Id);",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1515720785961,
-			"name": "Users_Add",
-			"description": "",
-			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
-			"responses": [],
-			"rawModeData": "{\r\n  \"Name\": \"André4 41234\"\r\n}"
-		},
-		{
-			"id": "433e9341-ebed-ae34-8822-1ba106d3ed7f",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
+					"key": "Authorization",
+					"value": "Bearer {{AndreRaica.UserRegister.Token}}",
 					"description": "",
 					"enabled": true
 				}
@@ -119,15 +46,115 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1514681109966,
+			"time": 1536351083019,
 			"name": "Users_Add Delete",
 			"description": "",
-			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"collectionId": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
 			"responses": [],
 			"rawModeData": ""
 		},
 		{
-			"id": "a4c014e7-8459-02e1-f4f6-97cc8f0bb7fb",
+			"id": "91e92baf-fd20-0981-ba7a-1fc46c9417ee",
+			"headers": "Authorization: Bearer {{AndreRaica.UserRegister.Token}}\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer {{AndreRaica.UserRegister.Token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users/{{AndreRaica.UserRegister.UserId}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1536351091004,
+			"name": "Users_GetById",
+			"description": "",
+			"collectionId": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
+			"responses": []
+		},
+		{
+			"id": "993fccfa-d226-50d2-f636-bf89ccbffdf1",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{AndreRaica.UserRegister.Token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{AndreRaica.UserRegister.Token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var data = JSON.parse(responseBody);\npostman.setGlobalVariable(\"AndreRaica.UserRegister.UserId\", data.Id);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1536351089693,
+			"name": "Users_Add",
+			"description": "",
+			"collectionId": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
+			"responses": [],
+			"rawModeData": "{\r\n  \"Name\": \"André4 41234\"\r\n}"
+		},
+		{
+			"id": "a2f553e6-8c9e-af24-5c8e-a0362973f22a",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{AndreRaica.UserRegister.Token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer {{AndreRaica.UserRegister.Token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1536351091660,
+			"name": "Users_Add Edit",
+			"description": "",
+			"collectionId": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
+			"responses": [],
+			"rawModeData": "{\r\n  \"Id\": \"{{AndreRaica.UserRegister.UserId}}\",\r\n  \"Name\": \"André Updated1112\"\r\n}"
+		},
+		{
+			"id": "fc803606-3279-db9c-1600-3d26897140f1",
 			"headers": "",
 			"headerData": [],
 			"url": "http://localhost:63324/Token",
@@ -146,14 +173,14 @@
 				},
 				{
 					"key": "username",
-					"value": "teste@teste.com",
+					"value": "admin",
 					"description": "",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "password",
-					"value": "123456",
+					"value": "admin",
 					"description": "",
 					"type": "text",
 					"enabled": true
@@ -181,20 +208,27 @@
 				}
 			],
 			"dataMode": "urlencoded",
-			"tests": "var data = JSON.parse(responseBody);\npostman.setGlobalVariable(\"AndreRaica.UserRegister.UserId\", data.Id);",
+			"tests": "var data = JSON.parse(responseBody);\npostman.setGlobalVariable(\"AndreRaica.UserRegister.Token\", data.access_token);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1515719132690,
+			"time": 1536351088943,
 			"name": "Token",
 			"description": "",
-			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"collectionId": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
 			"responses": []
 		},
 		{
-			"id": "b344cfa7-37ea-ab1f-cdaf-b780ac8777b8",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:63324/api/Users/{{AndreRaica.UserRegister.UserId}}",
+			"id": "fdbb84b6-615a-4865-8a17-663d22d7dac9",
+			"headers": "Authorization: Bearer {{AndreRaica.UserRegister.Token}}\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer {{AndreRaica.UserRegister.Token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:63324/api/Users",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -202,14 +236,13 @@
 			"method": "GET",
 			"data": null,
 			"dataMode": "params",
-			"version": 2,
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1514681142414,
-			"name": "Users_GetById",
+			"time": 1536351090347,
+			"name": "Users_GetAll",
 			"description": "",
-			"collectionId": "c26178b1-b544-f3c2-a7fd-4e9bd2b1adc0",
+			"collectionId": "5cf399f7-fb94-3fd2-33f0-71ede4e58c20",
 			"responses": []
 		}
 	]
